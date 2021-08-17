@@ -1,0 +1,12 @@
+xploit_wheel = 'abcdefghijklmnopqrstuvwxyz' # String 'abcdefghijklmnopqrstuvwxyz'
+
+def dist(c1, c2):
+    d1 = abs(xploit_wheel.index(c1) - xploit_wheel.index(c2))
+    return min(d1, 26 - d1)
+
+word = input() #user string input 
+word = word.lower() #lower case
+distances = [dist(c1, c2) for (c1, c2) in zip('a' + word, word)]
+for (letter, distance) in zip(word, distances):
+    print(sum(distances))
+    break
